@@ -40,7 +40,7 @@ result.sort()
 print(result[0])
 
 
-4. Create a function that takes a list and returns the difference between the biggest and smallest numbers.
+# 4. Create a function that takes a list and returns the difference between the biggest and smallest numbers.
 
 message = input('Please enter a list to know the difference between the biggest and smallest numbers: ')
 
@@ -109,10 +109,25 @@ print(new_res[0]+new_res[1]+new_res[2])
 
 # 9. Create a function that takes two numbers as arguments num, length and returns a list of multiples of num until the list length reaches length.
 
-message_1 =  7 #int(input('Please enter the num:   '))
-message_2 =  5 #int(input('Please enter the length:   '))
+message_1 = int(input('Please enter the num:   '))
+message_2 = int(input('Please enter the length:   '))
 
-list = [1] * message_2
-list[0] = 7
-list[-1] = 7*5
+list = [*range(message_1,((message_1*message_2)+1),message_1)]
+
 print(list)
+
+# 10. Create a function that takes a list of numbers lst, a string s and return a list of numbers as per the following rules:
+# "Asc" returns a sorted list in ascending order.
+# "Des" returns a sorted list in descending order.
+# "None" returns a list without any modification..
+
+message1 = input('Please enter a list to sort it:  ')
+message2 = input(' Enter Asc to sort in ascending order, Des for descending order or none if you do not want to sort:  ')
+
+res=list(map(int, message1.split(',')))
+
+ascending=sorted(res)
+descending=sorted(res, reverse=True)
+none = res
+
+print((message2=='Asc') * ascending + (message2=='Des') * descending + (message2=='none')* res)
