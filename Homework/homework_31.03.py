@@ -1,6 +1,6 @@
 # 1. Given three lists of integers: lst1, lst2, lst3, return the sum of integers which are common in all three lists.
 
-lst = ([1, 2, 2, 3], [5, 3, 2, 2], [7, 3, 2, 2])
+lst = ([1, 2, 2, 4, 3], [5, 3, 2, 2], [7, 3, 2, 2, 2])
 
 common_ints = [i for i in lst[0]
                    if i in lst[1]
