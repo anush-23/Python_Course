@@ -90,13 +90,74 @@ def censor(expression):
 def absolute(expression):
     new_expression = expression.split()
     
-    for item in range(len(new_expression)):
-        if new_expression[item] == "a":
-           new_expression[item] = new_expression[item].replace("a", "an absolute")
-        elif new_expression[item] == "A":
-            new_expression[item] = new_expression[item].replace("A", "An absolute")
-        return " ".join(new_expression)
+    for i in range(len(new_expression)):
+        if new_expression[i] == "a":
+           new_expression[i] = "an absolute"
+        elif new_expression[i] == "A":
+            new_expression[i] = "An absolute"
+    return " ".join(new_expression)
     
 
-    
+# 7. Return an Array of Subarrays
+# Write a function that takes three arguments (x, y, z) and returns an array containing x subarrays (e.g. [[], [], []]), 
+# each containing y number of item z.
 
+# x Number of subarrays contained within the main array.
+# y Number of items contained within each subarray.
+# z Item contained within each subarray.
+
+def matrix(x, y, z):
+    new_list = []
+
+    for i in range(x):
+        sub_list = []
+        for j in range(y):
+            sub_list.append(z)
+
+        new_list.append(sub_list)
+   
+    return (new_list)
+
+print(matrix(3, 2, 0))
+
+
+# 8. Given a string of numbers separated by a comma and space, return the product of the numbers.
+
+def multiply_nums (nums):
+    result = 1
+    nums = nums.split(", ")
+    
+    for item in nums:
+        result *= int(item)
+    return result
+
+
+# 9. Create a function that takes a string road and returns the car that's in first place. The road will be made of "=", 
+# and cars will be represented by letters in the alphabet.
+
+
+def first_place(expression):
+    output = ""
+    
+    if "=" not in expression:
+        return "No road available"
+    
+    for letter in expression[::-1]:
+        if letter != "=":
+            return letter
+            
+        
+    return "No car available"
+
+
+# 10. Create a function that takes an array of numbers between 1 and 10 (excluding one number) and returns the missing number.
+
+
+def missing_num(array_of_numbers: list):
+    
+    array_to_compare = list(range(1, 11))
+    
+    for item in array_to_compare:
+        if item not in array_of_numbers:
+            return item
+    
